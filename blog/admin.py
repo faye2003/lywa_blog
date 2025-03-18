@@ -1,8 +1,10 @@
 from django.contrib import admin
 
-from .models import Auteur, Article
+from .models import Article
 
-admin.site.register(Auteur)
+# Lien site pour personaliser la page d'administration
+# https://dev.to/vijaysoni007/how-to-show-images-of-the-model-in-django-admin-5hk4
+
 admin.site.register(Article)
 
 # Register your models here.

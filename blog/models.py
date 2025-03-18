@@ -1,28 +1,27 @@
 from django.db import models
-from django_countries.fields import CountryField
-from django.utils import timezone
 
-class Auteur(models.Model):
-    nom_complet = models.CharField(max_length=100)
-    date_naissance = models.DateField("Date de naissance")
-    pays = CountryField()
+from django.db.models.signals import pre_delete
+from django.dispatch.dispatcher import receiver
+import os
 
-    def __str__(self):
-        return self.nom_complet
+from django.contrib.auth.models import User
 
-    @property
-    def age(self):
-        import datetime
-        age = datetime.date() - self.date_naissance
-        return age
+STATUS = ((0, "brouillon" ) , (1, "publié"))
 
 # Création du model Article
 class Article(models.Model):
     titre = models.CharField(max_length=200)
     contenu = models.CharField(max_length=255)
     date_publication = models.DateTimeField("Date de publication")
-    auteur_id = models.ForeignKey(Auteur, on_delete=models.CASCADE)
-    image = models.ImageField("Image")
+    auteur = models.ForeignKey(User , on_delete= models.CASCADE)
+    image = models.ImageField(upload_to='post_images/', null=True, blank=True)
 
     def __str__(self):
         return self.titre
+
+@receiver(pre_delete, sender=Article)
+def delete_post_image(sender, instance, **kwargs):
+    # Supprimer le fichier image associé lors de la suppression de l'article
+    if instance.image:
+        if os.path.isfile(instance.image.path):
+            os.remove(instance.image.path)
