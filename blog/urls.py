@@ -1,5 +1,8 @@
 from django.urls import path
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 from blog.views import ArticleListView
 from blog.views import ArticleDetailView
 from blog.views import ArticleCreateView
@@ -15,3 +18,4 @@ urlpatterns = [
     path("update/<int:pk>/", ArticleUpdateView.as_view(), name="article_update_form"),
     path("delete/<int:pk>/", ArticleDeleteView.as_view(), name="article_check_delete"),
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
