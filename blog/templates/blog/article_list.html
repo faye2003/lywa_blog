@@ -1,5 +1,5 @@
 {% extends "blog/layout.html" %}
-{% block content %}
+{% block content %} 
 
 <header class="masthead">
     <div class="overlay"></div>
@@ -7,8 +7,8 @@
         <div class="row">
             <div class="col-md-8 mt-3 left">
                 <div class="site-heading">
-                    <h3 class="site-heading my-4 mt-3 text-black">Bienvenue sur BlogMICDA</h3>
-                    <p class="text-dark">Partagez mes réflexions et découvertes avec moi</p>
+                    <h3 class="site-heading my-4 mt-3 text-black">Bienvenue sur LywaBlog</h3>
+                    <p class="text-dark">Partagez vos réflexions et découvertes avec moi</p>
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
                 <div class="card-body">
                        <!-- Affichage de l'image -->
                        {% if post.image %}
-                       <img src="{{ post.image.url }}" alt="{{ post.titre }}" class="img-fluid">
+                       <img src="{{ post.image }}" alt="{{ post.titre }}" class="img-fluid">
                        {% endif %}
                     <h2 class="cardtitle">{{ post.titre }}</h2>
                     <p class="card-text text-muted h6">Publié par {{ post.auteur }} le {{ post.date_publication }}</p>
