@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>✍ LywaBlog</title>
+    <link rel="stylesheet" href="{% static 'blog/styles.css' %}">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lumen/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav
+      class="navbar navbar-expand-lg bg-light custom-margin"
+      data-bs-theme="light"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="http://127.0.0.1:8000/blog/"> ✍ LywaBlog</a>
+
+        <div class="collapse navbar-collapse" id="navbarColor03">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="http://127.0.0.1:8000/blog/">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#">A Propos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      {% block content %}
+      <!-- le contenue ici -->
+      {% endblock content %}
+    </main>
+
+    <footer class="py-3 bg-grey">
+      <p class="m-0 text-dark text-center">Copyright &copy; 2025 BlogMICDA</p>
+    </footer>
+  </body>
+</html>

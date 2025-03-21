@@ -1,0 +1,32 @@
+{% extends 'blog/layout.html' %} 
+{% block content %}
+
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mt-3 left">
+                <div class="site-heading">
+                    <h3 class="site-heading my-4 mt-3 text-black"> {% block titre %} {{ object.titre }} {% endblock titre %}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 card mb-4  mt-3 left  top">
+      <div class="card-body">
+        {% if object.image %}
+        <img src="{{ object.image }}" alt="{{ object.titre }}" class="img-fluid">
+        {% endif %}
+        <p class=" text-muted">Publié par {{ object.auteur }} le {{ object.date_publication }}</p>
+        <p class="card-text ">{{ object.contenu | safe }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock content %}
