@@ -13,3 +13,4 @@ Les liens d'accès
 "# Modifier un article existant (titre, côntenu, statut de publicatiôn). " http://127.0.0.1:8000/blog/update/1/
 
 "# Supprimer un article avec une cônfirmatiôn de suppressiôn. " http://127.0.0.1:8000/blog/delete/1/
+<img width="939" alt="Capture d'écran 2025-03-21 063944" src="https://github.com/user-attachments/assets/8bd05b92-e6f1-4bb6-90d9-52d08044da5b" />
