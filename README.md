@@ -1,5 +1,13 @@
 "# lywa_blog" 
 
+Daouda Ba
+daouda.ba1@unchk.edu.sn
+N007C6920171
+
+Mamadou Faye
+mamadou.faye18@unchk.edu.sn
+N0088C920181
+
 Les liens d'accès 
 
 "# Persônnaliser l'interface d’administratiôn (affichage de l'auteur, date de 
